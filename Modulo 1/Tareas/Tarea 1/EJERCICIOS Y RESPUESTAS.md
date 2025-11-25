@@ -7,3 +7,8 @@ SELECT FunFacts, Locations FROM FilmLocations
 ```
 SELECT Title, Locations, ReleaseYear FROM FilmLocations WHERE ReleaseYear <= 2000.
 ```
+
+3. Recupera los nombres, nombres de las compañías productoras, ubicaciones de filmación y años de estreno de las películas que no fueron escritas por James Cameron.
+```
+SELECT Title, ProductionCompany, Locations, ReleaseYear FROM FilmLocations WHERE Writer <> "James Cameron"
+```

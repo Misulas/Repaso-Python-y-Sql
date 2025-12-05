@@ -1,15 +1,37 @@
-
-### 1. Recupera los datos curiosos y las locaciones de filmación de todas las películas.
+# COUNT
+### 1. Recupera el número de ubicaciones de las películas dirigidas por Woody Allen.
 ```
-SELECT FunFacts, Locations FROM FilmLocations
-```
-
-### 2. Recupera los nombres de todas las películas estrenadas en el siglo XX y antes (años de estreno antes de 2000, incluyendo 2000), junto con las ubicaciones de filmación y los años de estreno.
-```
-SELECT Title, Locations, ReleaseYear FROM FilmLocations WHERE ReleaseYear <= 2000.
+SELECT COUNT(Locations) FROM FilmLocations WHERE Director="Woody Allen";
 ```
 
-### 3. Recupera los nombres, nombres de las compañías productoras, ubicaciones de filmación y años de estreno de las películas que no fueron escritas por James Cameron.
+### 2. Recupera el número de películas filmadas en Russian Hill.
 ```
-SELECT Title, ProductionCompany, Locations, ReleaseYear FROM FilmLocations WHERE Writer <> "James Cameron"
+SELECT COUNT(Title) from FilmLocations WHERE locations = "Russian Hill"
+
+o su equivalente:
+SELECT COUNT(*) from FilmLocations WHERE locations = "Russian Hill"
+```
+
+### 3. Recupera el número de filas que tienen un año de lanzamiento anterior a 1950 de la tabla "FilmLocations".
+```
+SELECT COUNT(Title) from FilmLocations WHERE ReleaseYear < 1950
+```
+# DISTINCT
+
+### 1. Recupera los nombres de todas las películas únicas estrenadas en el siglo XXI y en adelante, junto con sus años de estreno.
+
+```
+SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
+```
+
+### 2. Recupera los nombres de los directores y sus películas distintas filmadas en el Ayuntamiento.
+
+```
+SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
+```
+
+### 2. 
+
+```
+SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
 ```

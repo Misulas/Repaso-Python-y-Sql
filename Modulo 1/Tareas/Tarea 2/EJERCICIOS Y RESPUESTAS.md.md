@@ -24,14 +24,14 @@ SELECT COUNT(Title) from FilmLocations WHERE ReleaseYear < 1950
 SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
 ```
 
-### 2. Recupera los nombres de los directores y sus películas distintas filmadas en el Ayuntamiento.
+### 2. Recupera los nombres de los directores y sus películas distintas filmadas en el City Hall.
 
 ```
-SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
+SELECT DISTINCT Title, Director FROM FilmLocations WHERE Locations="City Hall";
 ```
 
-### 2. 
+### 3. Recupera el número de distribuidores que distribuyeron películas con el primer actor, Clint Eastwood.
 
 ```
-SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
+SELECT COUNT(DISTINCT Distributor) from FilmLocations WHERE actor1 = "Clint Eastwood"
 ```

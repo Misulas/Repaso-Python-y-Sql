@@ -30,8 +30,22 @@ SELECT DISTINCT Title, ReleaseYear from FilmLocations WHERE ReleaseYear >= 2000
 SELECT DISTINCT Title, Director FROM FilmLocations WHERE Locations="City Hall";
 ```
 
-### 3. Recupera el número de distribuidores que distribuyeron películas con el primer actor, Clint Eastwood.
+# LIMIT
+
+### 1. Recupera los nombres de las primeras 50 películas.
 
 ```
-SELECT COUNT(DISTINCT Distributor) from FilmLocations WHERE actor1 = "Clint Eastwood"
+SELECT DISTINCT Title FROM FilmLocations LIMIT 50;
+```
+
+### 2. Recupera los primeros 10 nombres de películas estrenadas en 2015.
+
+```
+SELECT Title from FilmLocations WHERE ReleaseYear = 2015 LIMIT 10
+```
+
+### 3. Recupera los siguientes 3 nombres de películas que siguen después de las primeras 5 películas estrenadas en 2015.
+
+```
+SELECT DISTINCT TItle FROM FilmLocations where ReleaseYear = 2015 LIMIT 3 offset 5
 ```

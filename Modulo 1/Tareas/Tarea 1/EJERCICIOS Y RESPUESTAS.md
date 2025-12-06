@@ -1,3 +1,5 @@
+# SELECT
+
 ### 1. Recupera los datos curiosos y las locaciones de filmación de todas las películas.
 ```
 SELECT FunFacts, Locations FROM FilmLocations
